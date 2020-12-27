@@ -6,7 +6,7 @@
   <link href="https://hkbweb.github.io/atom.xml" rel="self"/>
   
   <link href="https://hkbweb.github.io/"/>
-  <updated>2020-12-26T18:39:39.358Z</updated>
+  <updated>2020-12-27T14:01:29.735Z</updated>
   <id>https://hkbweb.github.io/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <title>你好世界</title>
     <link href="https://hkbweb.github.io/posts/45069/"/>
     <id>https://hkbweb.github.io/posts/45069/</id>
-    <published>2020-12-26T18:39:28.000Z</published>
-    <updated>2020-12-26T18:39:39.358Z</updated>
+    <published>2020-12-26T18:39:00.000Z</published>
+    <updated>2020-12-27T14:01:29.735Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h2 id="祝贺离这里"><a href="#祝贺离这里" class="headerlink" title="祝贺离这里"></a>祝贺离这里</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>欢迎来到我的博客，这是 <a href="https://hexo.io/">Hexo</a>主题</p><h2 id="祝贺我离开这里"><a href="#祝贺我离开这里" class="headerlink" title="祝贺我离开这里"></a>祝贺我离开这里</h2><p>这是我的第一个博客，在安装的过程中走了很多弯路</p><p>在得知我的小伙伴制作了一个博客之后，我的心也蠢蠢欲动。</p><p>在询问了我的小伙伴制作方法之后我就开始了我的博客制作之路</p><h5>先是安装了Git、Node.js、Hexo这些软件</h5><h5>更换主题</h5><h5>然后注册Github账号添加</h5><h5>使用ssh制作秘钥</h5><h5>然后就是域名解析</h5><h5>就简单的讲述一下吧</h5><h5>目前还有很多问题没有解决</h5><h5>比如加载动画不明不买的没了、或者主题美化不知道为什么没有用，看不懂代码如何引用。抄代码时出现错误</h5><h4 id="最后感谢一下这几位的博客主题美化的链接"><a href="#最后感谢一下这几位的博客主题美化的链接" class="headerlink" title="最后感谢一下这几位的博客主题美化的链接"></a>最后感谢一下这几位的博客主题美化的链接</h4><p><a href="https://www.antmoe.com/posts/a811d614/index.html">小康博客</a></p><p><a href="https://www.linuxwf.com/2020/04/08/exo-theme-butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94%EF%BC%88%E4%B8%89%EF%BC%89%E4%B8%BB%E9%A1%8C%E9%85%8D%E7%BD%AE/#%E7%B6%B2%E7%AB%99%E5%89%AF%E6%A8%99%E9%A1%8C">WF’s blog</a></p>]]></content>
     
     
       
@@ -33,6 +33,10 @@
     
     
     
+    <category term="hexo" scheme="https://hkbweb.github.io/categories/hexo/"/>
+    
+    
+    <category term="hexo" scheme="https://hkbweb.github.io/tags/hexo/"/>
     
   </entry>
   
