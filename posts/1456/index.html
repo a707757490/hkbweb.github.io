@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>STM32创建文件目录 | hkb blog</title><meta name="keywords" content="STM32"><meta name="author" content="hkbweb"><meta name="copyright" content="hkbweb"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="新建一个文件夹lesson_fwlib_template里面新建以下文件    Projecr：工程    Libraries：固件库    User：用户编写    Doc:说明文件 第一步   打开keli5   点击project   new vision project   选择刚刚新建的文件位置   选择project   在下面文件名输入“自定义文件名”   确定之后选择STMicro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STM32创建文件目录">
+<meta property="og:url" content="https://hkbweb.github.io/posts/1456/index.html">
+<meta property="og:site_name" content="hkb blog">
+<meta property="og:description" content="新建一个文件夹lesson_fwlib_template里面新建以下文件    Projecr：工程    Libraries：固件库    User：用户编写    Doc:说明文件 第一步   打开keli5   点击project   new vision project   选择刚刚新建的文件位置   选择project   在下面文件名输入“自定义文件名”   确定之后选择STMicro">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2020-12-27T15:09:00.000Z">
+<meta property="article:modified_time" content="2021-01-05T13:23:17.217Z">
+<meta property="article:author" content="hkbweb">
+<meta property="article:tag" content="STM32">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/icon2.png"><link rel="canonical" href="https://hkbweb.github.io/posts/1456/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-01-05 21:23:17'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><div id="link" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"></div><div id="script" src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></div><div id="script" src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></div><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'true'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}const fontSizeVal = saveToLocal.get('global-font-size')
+if (fontSizeVal !== undefined) {
+  document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+}})()</script><link rel="stylesheet" hre ="/css/body.css"><link rel="stylesheet" hre ="/css/footer.css"><link rel="stylesheet" hre ="/css/scrollbar.css"><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="hkb blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://media.giphy.com/media/7hW7hXXri33NK/giphy.gif" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/admin/"><i class="fa-fw fas fa-archive"></i><span> 测试</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://iotxfd.cn/"><i class="fa-fw fas fa-map-marker-alt"></i><span> 物联网小分队</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/s2.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">hkb blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/admin/"><i class="fa-fw fas fa-archive"></i><span> 测试</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="http://iotxfd.cn/"><i class="fa-fw fas fa-map-marker-alt"></i><span> 物联网小分队</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">STM32创建文件目录</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-27T15:09:00.000Z" title="发表于 2020-12-27 23:09:00">2020-12-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-05T13:23:17.217Z" title="更新于 2021-01-05 21:23:17">2021-01-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/STM32/">STM32</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>新建一个文件夹<br>lesson_fwlib_template<br>里面新建以下文件</p>
+<p>   Projecr：工程</p>
+<p>   Libraries：固件库</p>
+<p>   User：用户编写</p>
+<p>   Doc:说明文件</p>
+<p>第一步<br>   打开keli5<br>   点击project<br>   new vision project<br>   选择刚刚新建的文件位置<br>   选择project<br>   在下面文件名输入“自定义文件名”<br>   确定之后选择STMicroelectronics前面的＋号<br>   根据自己的型号选择芯片型号，比如我的是stm32f103rct6<br>   点击STM32F1 Series前面的+号<br>   点击STM32F103前面的+号<br>   选择STM32F103RC<br>   点击ok<br>   弹出的框点击关闭</p>
+<p>第二步<br> 在左侧Project拦里面的target 1文件夹下<br> 双击Source Group1更改名称为STARTUP<br> 右键Target1 点击Add Group更改名称为CMSIS用于存放<br>  右键Target1 点击Add Group更改名称为FWLIB用于存放固件库<br>  右键Target1 点击Add Group更改名称为USER用于存放用户文件<br>  右键Target1 点击Add Group更改名称为DOC用于存放文件说明</p>
+<p>第三步<br>  打开用于存放的文件的文件夹<br>  打开Libraries文件夹<br>  再打开官方文件STM32F10x_StdPeriph_Lib_V3.5.0\Libraries<br>  将CMSIS、STM32F10x_StdPeriph_Driver<br>  一起复制到自己存放Libraries的文件<br>  打开\Libraries\CMSIS删除多余的文件<br>  删除License.doc<br>  删除CMSIS_changes.htm<br>  删除CMSIS debug support.htm<br>  删除Documentation<br>  CMSIS文件里只剩下CM3<br>  打开CM3\DeviceSupport\ST\STM32F10x<br>  将里面所有的文件剪切到CMSIS<br>  进入CM3文件夹删除DeviceSupport<br>  打开CoreSupport文件夹<br>  将里面的所有文件剪切到CMSIS<br>  删除CM3<br>  最后CMSIS文件夹只剩下<br>  srartup文件夹<br>  core_cm3.c<br>  core_cm3.h<br>  stm32f10x.h<br>  system_stm32f10x.c<br>  system_stm32f10x.h<br>  这几个文件夹<br>  打开srartup文件夹<br>  删除gcc_ride7/iar/TrueSTUDIO<br>  打开arm文件夹将里面的文件剪切到之前的目录startup<br>  删除arm</p>
+<p>第四步<br>   返回到文件目录打开User<br>   右键新建文本文档<br>   改名为main.c<br>   再打开官方文件STM32F10x_StdPeriph_Lib_V3.5.0\Project<br>   复制<br>   stm32f10x_conf.h<br>   stm32f10x_it.c<br>   stm32f10x_it.h<br>   到User目录里面</p>
+<p>第五步<br>   回到keli5双击Project里面的STARTUP将启动文件加进去<br>   点击文件类型选All files（*.*）<br>   返回到上级目录<br>   打开Libraries/CMSIS/startup<br>   根据芯片型号选择文件，我的是RCT6-256k<br>   我选择startup_stm32f10x_hd.s<br>   点击add添加然后点击Close关闭</p>
+<p>   回到keli5双击Project里面的CMSIS<br>   返回到上级目录CMSIS<br>   添加core_cm3.c、system_stm32f10x.c<br>   分别添加进去然后点击Close关闭</p>
+<p>   回到keli5双击Project里面的FWLIB<br>   返回到上级目录Libraries<br>   打开STM32F10x_StdPeriph_Driver/src<br>   按Ctrl+A全选点击add添加进来<br>   然后点击Close关闭</p>
+<p>   回到keli5双击Project里面的USER<br>   返回到上级根目录<br>   打开User<br>   添加main.c、stm32f10x_it.c<br>   分别添加进去然后点击Close关闭</p>
+<p>   回到keli5双击Project里面的DOC<br>   返回到上级根目录<br>   打开Doc<br>   添加readme.txt添加进去然后点击Close关闭</p>
+<p>第六步<br>   打开魔术棒选项卡Options for Target<br>   选择C/C++<br>   选择倒数第三个文本框include paths<br>   点击后面的。。。按钮<br>   点击（x）左边的新建按钮<br>   点击刚出现的文本后面。。。按钮<br>   打开Libraries\CMSIS点击选择文件夹之后按回车确定<br>   点击（x）左边的新建按钮<br>   点击刚出现的文本后面。。。按钮<br>   打开Libraries\STM32F10x_StdPeriph_Driver\inc点击选择文件夹之后按回车确定<br>   点击（x）左边的新建按钮<br>   点击刚出现的文本后面。。。按钮<br>   打开User点击选择文件夹之后按回车确定<br>   点击ok再次点击ok返回到界面</p>
+<p>第七步<br>   点击user的加号打开mian.c<br>   对#include “stm32f10x.h”右键open document”stm32f10x.h”<br>   将文件翻到倒最底下再往上一点复制USE_STDPERIPH_DRIVER<br>   打开魔术棒选项卡Options for Target<br>   选择C/C++<br>   在第一个define文本框里面粘贴<br>   点击ok<br>   将stm32f10x.h文件翻到倒最顶部往下滑一些<br>   找到!defined<br>   复制自己对应型号容量的文件名称<br>   打开魔术棒选项卡Options for Target<br>   选择C/C++<br>   在第一个define文本框内<br>   在后面添加英文状态下逗号（,）粘贴进去</p>
+<p>第八步<br>   打开魔术棒选项卡Options for Target<br>   选择Target右边Code Generation<br>   勾上Use MicroLIB<br>   选择Output<br>   下边勾上Create HEX File和Browes information</p>
+<p>第九步<br>   进入文件根目录新建一个文本文档<br>   输入<br>   del *.bak /s<br>   del *.ddk /s<br>   del *.edk /s<br>   del *.lst /s<br>   del *.lnp /s<br>   del *.mpf /s<br>   del *.mpj /s<br>   del *.obj /s<br>   del *.omf /s<br>   del *.plg /s<br>   del *.rpt /s<br>   del *.tmp /s<br>   del *.__i /s<br>   del *.crf /s<br>   del *.o /s<br>   del *.d /s<br>   del *.axf /s<br>   del *.tra /s<br>   del *.dep /s<br>   del *.JLinkLog.txt /s<br>   del *.iex /s<br>   del *.htm /s<br>   del *.sct /s<br>   del *.map /s<br>   exit<br>   保存之后将文本名字改为keli.bat</p>
+<p>第十步</p>
+<p>   将ST-LINK2插入电脑<br>   用杜邦线链接单片机<br>   ST-LINK的CLK对单片机的CLK，DIO对着单片机的DIO<br>   如果单片机单独供电则只将ST-LINK2的GND接上单片机的GND<br>   如果不是单独供电则将ST-LINK2的3.3V和GND接上单片机的3.3V和GND<br>   回到keli5<br>   打开魔术棒选项卡Options for Target<br>   选择Debug右边区域的Use选择ST-Link Debugger<br>   点击右边Settings<br>   将下方Target Com的Port选择为SW<br>   右方区域SW DeVice可以识别到ST-LINK2下载器<br>   如果右方区域没有显示无则是ST-LINK2有问题<br>   选择Flash Dowload选择下方Dowload Function<br>   勾上Reset and Run<br>   点击确定退出再次点击ok表示完成</p>
+<p>错误解决</p>
+<p> 1、coer_cm3.c文件错误，4次警告以上，跟着教程还是一样<br>   （报错的原因是Coer_cm3.c和Coer_cm3.h文件太老导致的，这个是2009版本，ST已经停止维护了）<br> 解决方法：1、更换解决方案版本，将6变成5<br>          打开魔术棒工具<br>          点击Target<br>          选择右边Code Generation<br>          ARM Compiler：选择Use default compiler version 5这个版本</p>
+<pre><code>     2、下载最新的STM32cube_FW软件包
+        删除之前的旧文件
+        打开压缩包将cmsis_armcc_V6.h、core_cm3.h、coer_cmFunc.h、coer_cmlnstr.h这几个文件覆盖到CMSIS里面。停用core_cm3.c改用CMSIS标准接口。
+        这是ARM官方标准接口，坏处是CMSIS标准接口屏蔽了实现细节，但这是趋势。</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">hkbweb</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://hkbweb.github.io/posts/1456/">https://hkbweb.github.io/posts/1456/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://hkbweb.github.io" target="_blank">hkb blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/STM32/">STM32</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechar.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/wechar.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/aliplay.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/aliplay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/29970/"><img class="prev-cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">PS人物精修</div></div></a></div><div class="next-post pull-right"><a href="/posts/1455/"><img class="next-cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">STM32开发</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/1455/" title="STM32开发"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-27</div><div class="title">STM32开发</div></div></a></div><div><a href="/posts/1457/" title="STM32点亮led"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-27</div><div class="title">STM32点亮led</div></div></a></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://media.giphy.com/media/7hW7hXXri33NK/giphy.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">hkbweb</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://hkbweb.gitee.io/"><i class="fab fa-github"></i><span>跳转至我的主页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/hkbweb" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">这是我的博客</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/29970/" title="PS人物精修"><img data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PS人物精修"/></a><div class="content"><a class="title" href="/posts/29970/" title="PS人物精修">PS人物精修</a><time datetime="2021-01-05T13:26:10.000Z" title="发表于 2021-01-05 21:26:10">2021-01-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1456/" title="STM32创建文件目录"><img data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="STM32创建文件目录"/></a><div class="content"><a class="title" href="/posts/1456/" title="STM32创建文件目录">STM32创建文件目录</a><time datetime="2020-12-27T15:09:00.000Z" title="发表于 2020-12-27 23:09:00">2020-12-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1455/" title="STM32开发"><img data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="STM32开发"/></a><div class="content"><a class="title" href="/posts/1455/" title="STM32开发">STM32开发</a><time datetime="2020-12-27T15:09:00.000Z" title="发表于 2020-12-27 23:09:00">2020-12-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1457/" title="STM32点亮led"><img data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="STM32点亮led"/></a><div class="content"><a class="title" href="/posts/1457/" title="STM32点亮led">STM32点亮led</a><time datetime="2020-12-27T15:09:00.000Z" title="发表于 2020-12-27 23:09:00">2020-12-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/45069/" title="你好世界"><img data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你好世界"/></a><div class="content"><a class="title" href="/posts/45069/" title="你好世界">你好世界</a><time datetime="2020-12-26T18:39:00.000Z" title="发表于 2020-12-27 02:39:00">2020-12-27</time></div></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/s2.jpg)"><div id="footer-wrap"><div class="copyright">&copy;2021  <i id="heartbeat" class="fa fas fa-heartbeat"></i> hkbweb</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">本站部署于中国大陆，请勿发布违反国家法律信息</div><div class="icp"><a href="http://www.beian.gov.cn" target="_blank"><img class="lozad" data-src="/img/icon2.png" onerror="onerror=null;src='/img/icon2.png'" style="padding:0px;vertical-align: text-bottom;"/><span>浙ICP备12345678号</span></a></div></div><head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></head></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.spacingElementById('content-inner')
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.spacingElementById('content-inner')
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="js/chocolate.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="true"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="true" data-text="I,LOVE,YOU" data-fontsize="25px" data-random="false" async="async"></script><div id="link" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"></div><div id="script" src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></div><div id="script" src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></div></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":200,"height":350,"position":"left","hOffset":0,"vOffset":-80},"mobile":{"show":true,"scale":0.5}});</script></body></html>
