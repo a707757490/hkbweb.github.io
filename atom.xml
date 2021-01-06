@@ -6,7 +6,7 @@
   <link href="https://hkbweb.github.io/atom.xml" rel="self"/>
   
   <link href="https://hkbweb.github.io/"/>
-  <updated>2021-01-06T01:56:52.186Z</updated>
+  <updated>2021-01-06T02:09:54.490Z</updated>
   <id>https://hkbweb.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://hkbweb.github.io/posts/29970/"/>
     <id>https://hkbweb.github.io/posts/29970/</id>
     <published>2021-01-05T13:26:10.000Z</published>
-    <updated>2021-01-06T01:56:52.186Z</updated>
+    <updated>2021-01-06T02:09:54.490Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h1><label>   <h3> 导入人物图片</h3>  <h3>  在左边工具栏选择仿制图章先将图片水印去掉</h3>   <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS1.png">   <h3> 按住ALT并滑动滚轮放大图片，然后按ALT键取样点</h3>   <h3> 然后用鼠标左边将水印擦掉</h3>   <h3>在左边工具栏选择污点修复工具里面的修复换工具修复人物的污点</h3>    <h3>按ALT键取样点</h3>    <h3>然后按住ALT键取样点之后用鼠标左键修复有水印的地方</h3>    <img src= "/img/loading.gif" data-lazy-src="/img/PS1/1.gif"><h1 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h1>  <label>    <h3> 在右边控制面板</h3>    <h3> 选择通道面板</h3>    <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS2.png">    <h3> 分别点击红绿蓝查看明暗对比最强烈的通道</h3>    <h3> 右键复制图层</h3>    <h3> 点击复制图层</h3>    <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS3.png">  </label><h1 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h1><label>    <h3>在菜单栏选择滤镜-其他-高反差保留-半径里填入8像素或者10像素</h3>    <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS4.png">    <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS5.png">     <h3>在菜单栏选择图像-计算</h3>     <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS6.png">    <h3>最下面的混合选择强光,点击确定</h3>    <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS7.png">    <h3>再重复计算两次一共3次计算</h3>    <h3>选择Alpha3</h3>    <h3>先按照CTRL然后同时按鼠标左键选择区域或者点击下方的“将通道作为选区载入”</h3>    <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS8.png">   <h3> 选好选区之后</h3>   <h3> 在菜单栏-选择,点击反选或者同时按SHIFT+CTRL+I</h3>   <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS9.png"></label><h1 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h1><label>     <h3>单击通道面板下方的RGB图层</h3>     <h3>然后点击通道左边的图层面板</h3>     <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS10.png">     <h3>点击图层面板上方的调成面板里面的曲线</h3>      <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS11.png">     <h3>根据实际情况调整曲线</h3>      <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS12.png"></label><h1 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h1><label>    <h3>复制一层人物图层并置顶或者用鼠标按住图层拖到最上方</h3>    <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS13.png">    <h3>在菜单栏-滤镜-模糊-表面模糊</h3>    <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS14.png">   <h3> 半径选择15阈值选择20点击确定</h3>   <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS15.png">    <h3>并将图层的不透明度调低</h3>    <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS16.png">    <h3>再次复制一层人物图层并置顶或者用鼠标按住图层拖到最上方</h3>    <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS17.png">    <h3>在菜单栏-滤镜-其他-高反差保留</h3>    <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS18.png">    <h3>半径选择1或者0.8点击确定</h3>    <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS19.png">    <h3>混合模式选择线性光</h3>    <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS20.png"></label><h1 id="第六步"><a href="#第六步" class="headerlink" title="第六步"></a>第六步</h1><label>    <h3>在上方的调整面板选择可选颜色</h3>    <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS21.png">    <h3>根据实际情况调整红色-黄色-中性色</h3>    <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS22.png"></label><h1 id="第七步"><a href="#第七步" class="headerlink" title="第七步"></a>第七步</h1><label>     <h3>选择左边工具箱的套索工具或者钢笔工具</h3>      <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS23.png">     <h3>选择要提亮颜色的位置,并选择羽化</h3>      <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS24.png">     <h3>点击新建图层</h3>      <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS25.png">     <h3>填充对应的颜色</h3>      <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS26.png">      <h3> 选择正片叠底</h3>        <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS27.png">     <h3>双击选择的图层，打开图层样式</h3>     <h3>选择混合选择：自定</h3>     <h3>选择最下方的混合颜色带里面的下个图层</h3>     <h3>在白色区域鼠标点击尖角并按住ALT</h3>     <h3>拖动鼠标看实际效果</h3>      <img src= "/img/loading.gif" data-lazy-src="/img/PS1/PS28.png"><label><h1 id="如果还有其他区域重复第七步步骤"><a href="#如果还有其他区域重复第七步步骤" class="headerlink" title="如果还有其他区域重复第七步步骤"></a>如果还有其他区域重复第七步步骤</h1>]]></content>
     
@@ -33,6 +33,10 @@
     
     
     
+    <category term="PS" scheme="https://hkbweb.github.io/categories/PS/"/>
+    
+    
+    <category term="PS" scheme="https://hkbweb.github.io/tags/PS/"/>
     
   </entry>
   
@@ -113,7 +117,7 @@
     <link href="https://hkbweb.github.io/posts/45069/"/>
     <id>https://hkbweb.github.io/posts/45069/</id>
     <published>2020-12-26T18:39:00.000Z</published>
-    <updated>2021-01-05T14:37:37.170Z</updated>
+    <updated>2021-01-06T02:08:50.029Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>欢迎来到我的博客，这是 <a href="https://hexo.io/">Hexo</a>主题</p><h2 id="祝贺我离开这里"><a href="#祝贺我离开这里" class="headerlink" title="祝贺我离开这里"></a>祝贺我离开这里</h2><p>这是我的第一个博客，在安装的过程中走了很多弯路</p><p>在得知我的小伙伴制作了一个博客之后，我的心也蠢蠢欲动。</p><p>在询问了我的小伙伴制作方法之后我就开始了我的博客制作之路</p><h5>先是安装了Git、Node.js、Hexo这些软件</h5><h5>更换主题</h5><h5>然后注册Github账号添加</h5><h5>使用ssh制作秘钥</h5><h5>然后就是域名解析</h5><h5>就简单的讲述一下吧</h5><h5>目前还有很多问题没有解决</h5><h5>比如加载动画不明不买的没了、或者主题美化不知道为什么没有用，看不懂代码如何引用。抄代码时出现错误</h5><img src= "/img/loading.gif" data-lazy-src="/img/pic.jpg"><h4 id="最后感谢一下这几位的博客主题美化的链接"><a href="#最后感谢一下这几位的博客主题美化的链接" class="headerlink" title="最后感谢一下这几位的博客主题美化的链接"></a>最后感谢一下这几位的博客主题美化的链接</h4><p><a href="https://www.antmoe.com/posts/a811d614/index.html">小康博客</a></p><p><a href="https://www.linuxwf.com/2020/04/08/exo-theme-butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94%EF%BC%88%E4%B8%89%EF%BC%89%E4%B8%BB%E9%A1%8C%E9%85%8D%E7%BD%AE/#%E7%B6%B2%E7%AB%99%E5%89%AF%E6%A8%99%E9%A1%8C">WF’s blog</a></p>]]></content>
     
